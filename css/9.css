@@ -1,0 +1,45 @@
+body {
+    background-color: #1b0a2d;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* 불꽃 친구 애니메이션 스타일 */
+#friendAnimation {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1100px;
+    height: 550px;
+    background: url("../img/불꽃친구애니.png") no-repeat;
+    background-size: cover;
+    animation: friendgif 1s steps(6) infinite; /* 기본 애니메이션 실행 */
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* 애니메이션 박스 스타일 */
+.ani-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: url("../img/불꽃애니1.png") no-repeat;
+    background-size: cover;
+    visibility: hidden; /* 클릭 전에는 보이지 않도록 설정 */
+    animation: none; /* 애니메이션 정지 상태 */
+}
+
+/* 불꽃놀이 애니메이션 키프레임 */
+@keyframes gif {
+    100% {background-position: -12000px 0;} /* 전체 이미지의 크기만큼 이동 */
+}
+
+/* 불꽃놀이 친구 애니메이션 키프레임 */
+@keyframes friendgif {
+    100% {background-position: -6600px 0;} /* 전체 이미지의 크기만큼 이동 */
+}
